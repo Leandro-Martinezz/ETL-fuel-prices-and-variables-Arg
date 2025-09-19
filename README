@@ -1,0 +1,44 @@
+# ETL Project:
+
+**Comparative Analysis: International Crude Oil Barrel Price vs. Dollar Price vs. Fuel Price in Argentina vs. Fuel Consumption**
+
+## Considerations
+
+To avoid overcomplicating the analysis of the international barrel price, the **Brent price** will be used as a reference, although other standards exist, such as West Texas Intermediate (WTI) and Arab Light crude (OSP).
+
+This project does not aim to delve into complex economic issues, but rather to **simply demonstrate an ETL analysis** where information is extracted from multiple sources, cleaned, and loaded into a SQL database for subsequent analysis.
+
+The main focuses are:
+- Code modularity
+- Unit testing with pytest
+- A robust ETL pipeline
+
+## Variables Analyzed
+
+- Brent Crude Price (USD/barrel)
+- Fuel Prices in Argentina (ARS/liter)
+- Fuel Sales in Argentina (volume)
+- USD/ARS Exchange Rate
+
+## Data Sources
+
+| **Brent Crude Price** | FRED API | API (monthly) |
+| **Fuel Prices** | datos.gob.ar | Government CSV |
+| **Fuel Sales** | energia.gob.ar | Government CSV |
+| **Exchange Rate** | argentinadatos.com | API |
+
+## Architecture
+
+etl/
+├── extract.py      # Extraction from APIs and CSVs
+├── transform.py    # Cleaning and normalization
+└── load.py         # Loading to PostgreSQL
+src/                # Source data (CSVs)
+tests/              # Tests with pytest and nb
+main.py             # Main executor
+
+## Main Insights
+
+1. **Correlation between crude oil barrel price and fuel prices in Argentina**
+2. **Correlation between USD/ARS exchange rate and fuel prices in Argentina**
+3. **Correlation among variables**
